@@ -12,6 +12,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'capistrano'
 gem 'devise'
+gem "will_paginate", "~>3.0.5"
+gem "acts_as_list", "~> 0.3.0"
 gem 'thin'
 
 group :doc do
