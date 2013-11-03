@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require tracks.js
 //= require_tree .
 
 //= require jquery-ui-1.10.0.custom.min

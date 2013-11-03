@@ -5,6 +5,12 @@ Yardsailer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  
+  resources :users do
+    collection do
+      get :dashboard
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
