@@ -6,17 +6,13 @@ Yardsailer::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   
-  resources :users do
-    collection do
-      get :dashboard
-    end
-  end
-
-  resources :yardsales do
+  resources :yardsales, :only => [:index] do
     collection do
       get :popular
       get :nearby
       get :featured
+      post :add_to_list
+      post :add_to_favorite
     end
   end
   
@@ -27,6 +23,12 @@ Yardsailer::Application.routes.draw do
         post :add_yard_sale
         post :reorder
       end
+    end
+  end
+  
+  resources :users do
+    collection do
+      get :dashboard
     end
   end
   

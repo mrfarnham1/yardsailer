@@ -1,0 +1,24 @@
+<div class="recurring_container">
+<%= form_for(@new_recurring_todo, :html=> { :id=>'recurring-todo-form-new-action', :name=>'recurring_todo', :class => 'inline-form' }) do -%>
+    <div id="error_status"><%= get_list_of_error_messages_for(@new_recurring_todo) %></div>
+
+    <div id="recurring_todo_form_container">
+      <div id="recurring_todo">
+        <label for="recurring_todo_description"><%= Todo.human_attribute_name('description') %></label><%=
+        text_field_tag( "recurring_todo[description]", "", "size" => 30, "maxlength" => 100) -%>
+        <label for="recurring_todo_notes"><%= Todo.human_attribute_name('notes') %></label><%=
+        text_area_tag( "recurring_todo[notes]", nil, {:cols => 29, :rows => 6}) -%>
+        <label for="recurring_todo_project_name"><%= Todo.human_attribute_name('project') %></label>
+        <input id="recurring_todo_project_name" name="project_name" autocomplete="off" size="30" type="text" value="" />
+        <div class="page_name_auto_complete" id="project_list" style="display:none"></div>
+
+        <label for="recurring_todo_context_name"><%= Todo.human_attribute_name('context') %></label>
+        <input id="recurring_todo_context_name" name="context_name" autocomplete="off" size="30" type="text" value="<%= current_user.contexts.first.name unless current_user.contexts.first.nil?%>" />
+        <div class="page_name_auto_complete" id="context_list" style="display:none"></div>
+        <label for="tag_list"><%= "#{Todo.human_attribute_name('tags')} #{t('shared.separate_tags_with_commas')}"%></label>
+        <%= text_field_tag "tag_list", nil, :size => 30 -%>
+      </div>
+    </div>
+
+  <% end %>
+</div>

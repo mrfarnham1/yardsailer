@@ -1,0 +1,27 @@
+<div style="float:right">
+  <%= link_to "Create New Yardsale", new_users_yardsale_path %>
+</div>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @yardsales.each do |yardsale| %>
+        <tr>
+          <td><%= yardsale.name %></td>
+          <td><%= yardsale.description %></td>
+          <td>
+            <%= link_to 'Edit', edit_users_yardsale_path(yardsale) %>
+            <%= link_to 'Delete', users_yardsale_path(yardsale), :method => :delete, :confirm => 'Are you sure you want to delete this Yardsale?' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

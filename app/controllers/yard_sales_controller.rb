@@ -1,3 +1,0 @@
-class YardSalesController < ActionController
-  
-end

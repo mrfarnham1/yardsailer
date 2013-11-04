@@ -10,6 +10,9 @@ class AddTripsTable < ActiveRecord::Migration
       t.string :start_city
       t.string :start_state
       t.string :start_zip
+      t.float :latitude
+      t.float :longitude
+      t.timestamps
     end
   end
   

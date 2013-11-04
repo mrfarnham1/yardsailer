@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103235704) do
+ActiveRecord::Schema.define(version: 20131104005908) do
+
+  create_table "favorite_yardsales", force: true do |t|
+    t.integer "user_id"
+    t.integer "yardsale_id"
+  end
 
   create_table "geocodes", force: true do |t|
     t.decimal "latitude",    precision: 15, scale: 12
@@ -44,6 +49,14 @@ ActiveRecord::Schema.define(version: 20131103235704) do
   add_index "geocodings", ["geocodable_type"], name: "geocodings_geocodable_type_index", using: :btree
   add_index "geocodings", ["geocode_id"], name: "geocodings_geocode_id_index", using: :btree
 
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.string   "body"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "trip_yardsales", force: true do |t|
     t.integer "trip_id"
     t.integer "yardsale_id"
@@ -61,6 +74,10 @@ ActiveRecord::Schema.define(version: 20131103235704) do
     t.string   "start_city"
     t.string   "start_state"
     t.string   "start_zip"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -88,12 +105,17 @@ ActiveRecord::Schema.define(version: 20131103235704) do
     t.string   "description"
     t.string   "caption"
     t.string   "address1"
+    t.string   "address2"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.datetime "start_date"
     t.datetime "end_date"
     t.boolean  "featured",    default: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
