@@ -236,9 +236,6 @@ a.show_successors:hover, a.link_to_successors:hover {background-image: image-url
 /* Navigation links at the top */
 
 #navcontainer {
-    position: fixed;
-    top: 48px;
-    left: 0px;
     a { color: #eee; }
     a:hover { color: #ccc; }
 }
@@ -246,6 +243,7 @@ a.show_successors:hover, a.link_to_successors:hover {background-image: image-url
 #navlist {
     margin: 0;
     padding: 0 0 20px 5px;
+    float:right;
 
     ul, li {
         margin: 0;
@@ -260,7 +258,7 @@ a.show_successors:hover, a.link_to_successors:hover {background-image: image-url
         font-weight: bold;
         margin: 0 10px 4px 10px;
         text-decoration: none;
-        color: #eee;
+        color: #FFF;
     }
 
     a:link#current, a:visited#current, a:hover {

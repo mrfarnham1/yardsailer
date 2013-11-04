@@ -8,8 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-<%= render :partial => 'layouts/header_nav' %>
+
+<div id="navcontainer">
+  <%= render :partial => 'layouts/header_nav' %>
+</div>
 
 <%= yield %>
 

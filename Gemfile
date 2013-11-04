@@ -15,6 +15,7 @@ gem 'devise'
 gem "will_paginate", "~>3.0.5"
 gem "acts_as_list", "~> 0.3.0"
 gem 'thin'
+gem "acts_as_geocodable", "~> 2.0.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

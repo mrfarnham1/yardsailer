@@ -12,6 +12,24 @@ Yardsailer::Application.routes.draw do
     end
   end
 
+  resources :yardsales do
+    collection do
+      get :popular
+      get :nearby
+      get :featured
+    end
+  end
+  
+  namespace :users do
+    resources :yardsales
+    resources :trips do
+      member do
+        post :add_yard_sale
+        post :reorder
+      end
+    end
+  end
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
